@@ -156,7 +156,9 @@ MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요�
 
     개별 다운로드가 필요한 모델은 다음과 같습니다.
     - ConCSE [📚 model](https://drive.google.com/drive/folders/1k3JDP4WfRkVTypaiL3L1RO1qeve2yvhF?usp=sharing)
-    - Fair Dimension Filtering [📚 model]()
+    - Fair Dimension Filtering
+         - Filter_model.th [📚 model](https://drive.google.com/file/d/1ZgQIBYghDpQ7lkKD3UnDwJCnJupPbkrF/view?usp=sharing)
+         - baseline.th [📚 model](https://drive.google.com/file/d/14UvLw8ZQMizJgy0ZALA67m0Cmdb04Dp_/view?usp=sharing)
 
    개별 알고리즘에 따른 데이터 및 모델 세팅이 필요합니다. 데이터와 모델은 각각 data와 model 폴더를 생성하여 다음과 같은 구조로 설정합니다.
 
