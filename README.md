@@ -21,7 +21,7 @@ algorithms, benchmark, metric 각 파트의 구성은 다음과 같습니다.
 
 ## Algorithms
 AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포함하고 있습니다.
-### Pre-Processing Algorithms
+### Pre-processing Algorithms
 * AIF360
   * Disparate Impact Remover
   * Learning Fair Representation
@@ -34,12 +34,13 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Representative Heuristic [📚 data](https://github.com/jongwonryu/RH)
   * Fair Batch [📃paper](https://arxiv.org/abs/2012.01696) [💻 code](https://github.com/yuji-roh/fairbatch) (to be updated)
 
-### In-Processing Algorithms
+### In-processing Algorithms
 * AIF360
   * Gerry Fair Classifier (to be updated)
   * Meta Fair Classifier
   * Prejudice Remover
   * Exponentiated Gradient Reduction
+  * Adversarial Debiasing (to be updated)
 * SOTA Algorithm
   * ConCSE [📃paper](https://arxiv.org/abs/2409.00120) [💻 code](https://github.com/jjy961228/ConCSE?tab=readme-ov-file)
   * INTapt [📃paper](https://arxiv.org/abs/2305.16371)
@@ -52,7 +53,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE) (to be updated)
   * Kernel Density Estimator [📃paper](https://proceedings.neurips.cc/paper/2020/hash/ac3870fcad1cfc367825cda0101eee62-Abstract.html) [💻 code](https://github.com/Gyeongjo/FairClassifier_using_KDE) (to be updated)
 
-### Post-Processing Algorithms
+### Post-processing Algorithms
 * AIF360
   * Calibrated EqOdds
   * Equalized Odds
