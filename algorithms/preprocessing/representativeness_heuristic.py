@@ -44,9 +44,7 @@ class RepresentativenessHeuristicMitigator:
         excel_path: str = os.environ["PYTHONPATH"]
         + "/MAF/data/RH/"
         + "RH_dataset.xlsx",
-        save_path: str = os.environ["PYTHONPATH"]
-        + "/MAF/data/RH/"
-        + "RH_output.xlsx",
+        save_path: str = os.environ["PYTHONPATH"] + "/MAF/data/RH/" + "RH_output.xlsx",
     ):
         data = pd.read_excel(excel_path)
 
