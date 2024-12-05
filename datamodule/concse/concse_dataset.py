@@ -7,17 +7,13 @@ parent_dir = sys.path[1]
 class LoadNLI:
     @staticmethod
     def en_train():
-        train_path = (
-            parent_dir + "/MAF/data/Koglish_dataset/Koglish_NLI/en_train.csv"
-        )
+        train_path = parent_dir + "/MAF/data/Koglish_dataset/Koglish_NLI/en_train.csv"
         train_data = pd.read_csv(train_path, sep=",")
         return train_data
 
     @staticmethod
     def cross_train():
-        train_path = (
-            parent_dir + "/MAF/data/Koglish_dataset/Koglish_NLI/cs_train.csv"
-        )
+        train_path = parent_dir + "/MAF/data/Koglish_dataset/Koglish_NLI/cs_train.csv"
         train_data = pd.read_csv(train_path, sep=",")
         return train_data
 
