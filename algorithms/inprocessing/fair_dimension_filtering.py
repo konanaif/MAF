@@ -92,12 +92,16 @@ class STEFunction(torch.autograd.Function):
 class MaskingModel(nn.Module):
     def __init__(self, input_dim, output_dim):
         super(MaskingModel, self).__init__()
-        self.mask_scores = nn.Parameter(torch.randn(input_dim))
+        self.mask_scores = nn.Parameter(torch.randn(input_dim)*0.001)
         self.classifier = nn.Linear(input_dim, output_dim, bias=False)
+        torch.nn.init.sparse_(self.classifier.weight, sparsity=0.02, std=0.01)
 
     def forward(self, x):
-        mask = STEFunction.apply(F.sigmoid(self.mask_scores))
-        out = self.classifier(x * mask)
+        if self.training:
+            mask = STEFunction.apply(F.sigmoid(self.mask_scores))
+            out = self.classifier(x * mask)
+        else:
+            out = self.classifier(x)
         return out
 
 
@@ -239,17 +243,8 @@ class DimFiltering:
 
                 pred = models_(img)
                 loss = self.criterion(pred, target)
-
-                class_losses = [loss[target == i].mean() for i in range(self.n_class)]
-                class_losses = torch.stack(class_losses)
-
-                diff = torch.nan_to_num(
-                    torch.abs(class_losses[0] - class_losses[1]), 0.0
-                )  # max - min
-                if isinstance(models_, Filter_Net):
-                    loss_for_update = loss.mean() + diff
-                else:
-                    loss_for_update = loss.mean()
+                
+                loss_for_update = loss.mean() + (self.weight_decay) * (torch.norm(models_.fc.classifier.weight.data, p=1))
 
                 loss_for_update.backward()
                 optimizer.step()
