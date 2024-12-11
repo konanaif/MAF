@@ -51,12 +51,12 @@ class RawDataSet:
     def __init__(self, filename=None, **kwargs):
         if filename:
             # Detect file type
-            extention = os.path.splitext(filename)[-1]
+            extension = os.path.splitext(filename)[-1]
         else:
-            extention = ""
+            extension = ""
 
         ##### CASE 1 : numpy object #####
-        if extention == ".npy":
+        if extension == ".npy":
             ## Required parameters
             #    - target column index (int) : target_col_idx
             #    - bias column index (int) : bias_col_idx
@@ -100,7 +100,7 @@ class RawDataSet:
         #################################
 
         ##### CASE 2 : framed table #####
-        elif extention in [".csv", ".tsv"]:
+        elif extension in [".csv", ".tsv"]:
             ## Required parameters
             #    - target column name (str) : target_col_name
             #    - bias column name (str) : bias_col_name
@@ -162,8 +162,8 @@ class RawDataSet:
                 self.target = kwargs["y"]
                 self.feature_only = kwargs["x"]
             except:
-                print("Input file : {}\t\t\tExtention : {}".format(filename, extention))
-                raise Exception("FILE ERROR!! Only [npy, csv, tsv] extention required.")
+                print("Input file : {}\t\t\tExtention : {}".format(filename, extension))
+                raise Exception("FILE ERROR!! Only [npy, csv, tsv] extension required.")
 
     # Convert categorical values to numerical (integer) values on pandas.DataFrame
     def convert_categorical(self, dataframe, category_list):
