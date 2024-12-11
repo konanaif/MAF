@@ -844,7 +844,7 @@ class FairnessVAE:
 
 
 if __name__ == "__main__":
-    fvae = FairnessVAE(dataset_name="pubfig")
+    fvae = FairnessVAE(dataset_name="pubfig", protected="Heavy Makeup")
     metrics_orig, metrics_transf = fvae.run()
     print("Metrics for original data:")
     print(metrics_orig)
