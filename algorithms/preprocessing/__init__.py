@@ -12,6 +12,7 @@ from MAF.algorithms.preprocessing.reweighing import Reweighing
 from MAF.algorithms.preprocessing.fairpca import (
     MeanCovarianceMatchingFairPCAWithClassifier,
 )
+from MAF.algorithms.preprocessing.fair_batch import FairBatch
 
 from MAF.algorithms.preprocessing.optim_preproc_helpers.data_prepro_function import (
     load_preproc_data_adult,
