@@ -12,3 +12,4 @@ from MAF.algorithms.inprocessing.fair_feature_distillation import (
 )
 from MAF.algorithms.inprocessing.learning_from_fairness import LearningFromFairness
 from MAF.algorithms.inprocessing.meta_classifier import MetaFairClassifier
+from MAF.algorithms.inprocessing.adversarial_debiasing import AdversarialDebiasing
