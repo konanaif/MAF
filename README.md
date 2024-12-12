@@ -32,7 +32,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Co-occurrence-bias [📃paper](https://aclanthology.org/2023.findings-emnlp.518.pdf) [💻 code](https://github.com/CheongWoong/impact_of_cooccurrence)
   * Fair Streaming PCA [📃paper](https://arxiv.org/abs/2310.18593) [💻 code](https://github.com/HanseulJo/fair-streaming-pca/?tab=readme-ov-file)
   * Representative Heuristic [📚 data](https://github.com/jongwonryu/RH)
-  * Fair Batch [📃paper](https://arxiv.org/abs/2012.01696) [💻 code](https://github.com/yuji-roh/fairbatch) (to be updated)
+  * Fair Batch [📃paper](https://arxiv.org/abs/2012.01696) [💻 code](https://github.com/yuji-roh/fairbatch)
 
 ### In-processing Algorithms
 * AIF360
@@ -40,7 +40,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Meta Fair Classifier
   * Prejudice Remover
   * Exponentiated Gradient Reduction
-  * Adversarial Debiasing (to be updated)
+  * Adversarial Debiasing
 * SOTA Algorithm
   * ConCSE [📃paper](https://arxiv.org/abs/2409.00120) [💻 code](https://github.com/jjy961228/ConCSE?tab=readme-ov-file)
   * INTapt [📃paper](https://arxiv.org/abs/2305.16371)
@@ -50,8 +50,8 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * SLIDE [📃paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608022002891) [💻 code](https://github.com/kwkimonline/SLIDE?tab=readme-ov-file)
   * sIPM-LFR  [📃paper](https://arxiv.org/abs/2202.02943) [💻 code](https://github.com/kwkimonline/sIPM-LFR) (to be updated)
   * Learning From Fairness [📃paper](https://arxiv.org/abs/2007.02561) [💻 code](https://github.com/alinlab/LfF)
-  * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE) (to be updated)
-  * Kernel Density Estimator [📃paper](https://proceedings.neurips.cc/paper/2020/hash/ac3870fcad1cfc367825cda0101eee62-Abstract.html) [💻 code](https://github.com/Gyeongjo/FairClassifier_using_KDE) (to be updated)
+  * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE) 
+  * Kernel Density Estimator [📃paper](https://proceedings.neurips.cc/paper/2020/hash/ac3870fcad1cfc367825cda0101eee62-Abstract.html) [💻 code](https://github.com/Gyeongjo/FairClassifier_using_KDE)
 
 ### Post-processing Algorithms
 * AIF360
