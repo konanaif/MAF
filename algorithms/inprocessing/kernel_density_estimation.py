@@ -421,7 +421,8 @@ class KDEModel:
 
 
 class KernelDensityEstimation:
-    def __init__(self, dataset_name="compas", protected="race"):
+    def __init__(self, params, dataset_name="compas", protected="race"):
+        self.params = params
         self.dataset_name = dataset_name
         self.protected = protected
         self._load_and_preprocess_data()
@@ -493,9 +494,9 @@ class KernelDensityEstimation:
             privileged_groups=self.privileged_groups,
         )
 
-    def run(self, params: KDEParameters):
+    def run(self):
         lr_pred = self.baseline_fit()
-        pr_pred = self.fit(params)
+        pr_pred = self.fit(self.params)
 
         metrics_orig = self.compute_metrics(lr_pred)
         metrics_transform = self.compute_metrics(pr_pred)
@@ -504,8 +505,10 @@ class KernelDensityEstimation:
 
 if __name__ == "__main__":
     kde_params = KDEParameters()
-    kde = KernelDensityEstimation(dataset_name="adult", protected="sex")
-    metrics_orig, metrics_transf = kde.run(kde_params)
+    kde = KernelDensityEstimation(
+        params=kde_params, dataset_name="adult", protected="sex"
+    )
+    metrics_orig, metrics_transf = kde.run()
     print("Metrics for original data:")
     print(metrics_orig)
     print("\nMetrics for transformed data:")
