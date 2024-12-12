@@ -13,4 +13,8 @@ from MAF.algorithms.inprocessing.fair_feature_distillation import (
     FairFeatureDistillation,
 )
 from MAF.algorithms.inprocessing.fairness_vae import FairnessVAE
+from MAF.algorithms.inprocessing.kernel_density_estimation import (
+    KDEParameters,
+    KernelDensityEstimation,
+)
 from MAF.algorithms.inprocessing.learning_from_fairness import LearningFromFairness
