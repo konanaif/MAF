@@ -811,21 +811,20 @@ class SIPMDataset(StandardDataset):
         return train, test
 
 
-##Main class
 class SIPMLFR:
     def __init__(
         self,
-        dataname: str = "",
+        dataname: str = "compas",
         scaling: int = 1,
         batch_size: int = 512,
         epochs: int = 300,
         opt: str = "Adam",
         model_lr: float = 0.02,
         aud_lr: float = 0.02,
-        aud_steps: str = "Adam",
+        aud_steps: int = 2,
         acti: str = "leakyrelu",
         num_layer: int = 1,
-        head_net: str = "liner",
+        head_net: str = "linear",
         aud_dim: int = 0,
         eval_freq: int = 10,
     ):
@@ -1096,7 +1095,13 @@ class SIPMLFR:
 
         return test_stats
 
-    def run(self, run_five, lmda, lmdaF, lmdaR):
+    def run(
+        self,
+        run_five: int = 1,
+        lmda: float = 0.0,
+        lmdaF: float = 0.0,
+        lmdaR: float = 1.0,
+    ):
         seeds = [2021, 2022, 2023, 2024, 2025] if bool(run_five) else [2021]
         stats = {}
         for i, seed in enumerate(seeds):
