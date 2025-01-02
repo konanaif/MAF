@@ -811,7 +811,6 @@ class SIPMDataset(StandardDataset):
         return train, test
 
 
-##Main class
 class SIPMLFR:
     def __init__(
         self,
