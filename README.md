@@ -36,7 +36,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
 
 ### In-processing Algorithms
 * AIF360
-  * Gerry Fair Classifier (to be updated)
+  * Gerry Fair Classifier
   * Meta Fair Classifier
   * Prejudice Remover
   * Exponentiated Gradient Reduction
@@ -50,7 +50,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * SLIDE [📃paper](https://www.sciencedirect.com/science/article/abs/pii/S0893608022002891) [💻 code](https://github.com/kwkimonline/SLIDE?tab=readme-ov-file)
   * sIPM-LFR  [📃paper](https://arxiv.org/abs/2202.02943) [💻 code](https://github.com/kwkimonline/sIPM-LFR) (to be updated)
   * Learning From Fairness [📃paper](https://arxiv.org/abs/2007.02561) [💻 code](https://github.com/alinlab/LfF)
-  * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE) 
+  * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE)
   * Kernel Density Estimator [📃paper](https://proceedings.neurips.cc/paper/2020/hash/ac3870fcad1cfc367825cda0101eee62-Abstract.html) [💻 code](https://github.com/Gyeongjo/FairClassifier_using_KDE)
 
 ### Post-processing Algorithms
