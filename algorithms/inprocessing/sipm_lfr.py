@@ -1112,6 +1112,7 @@ class SIPMLFR:
                 for key in stats.keys():
                     stats[key].append(stat[key])
         save_result(self.results_path, stats)
+        return stats
 
 
 def save_result(path, stats):
@@ -1170,8 +1171,10 @@ def sIPM_LFR_fit(
         eval_freq,
     )
 
-    runner.run(run_five, lmda, lmdaF, lmdaR)
+    result = runner.run(run_five, lmda, lmdaF, lmdaR)
+    return result
 
 
 if __name__ == "__main__":
-    sIPM_LFR_fit()
+    result = sIPM_LFR_fit()
+    print("Result", result)
