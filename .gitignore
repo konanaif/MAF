@@ -24,3 +24,4 @@ data/latte
 data/pubfig
 data/RH
 test_framework.py
+result/
