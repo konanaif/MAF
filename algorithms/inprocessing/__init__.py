@@ -18,3 +18,5 @@ from MAF.algorithms.inprocessing.kernel_density_estimation import (
     KernelDensityEstimation,
 )
 from MAF.algorithms.inprocessing.learning_from_fairness import LearningFromFairness
+from MAF.algorithms.inprocessing.sipm_lfr import SIPMLFR
+from MAF.algorithms.inprocessing.gerry_fair_classifier import GerryFairClassifier
