@@ -49,7 +49,7 @@ class EMA:
         self.updated[index] = 1
 
     def max_loss(self, label):
-        label_index = np.where(self.label == label)[0]
+        label_index = np.where(self.label.cpu() == label.cpu())[0]
         return self.parameter[label_index].max()
 
 
@@ -97,7 +97,7 @@ class LfFDataset(Dataset):
 class MLP(nn.Module):
     def __init__(self, num_classes, input_size):
         super(MLP, self).__init__()
-        self.feature = nn.Sequential(
+        feature = nn.Sequential(
             nn.Linear(input_size, 100),
             nn.ReLU(),
             nn.Linear(100, 100),
@@ -105,8 +105,8 @@ class MLP(nn.Module):
             nn.Linear(100, 100),
             nn.ReLU(),
         )
-
-        self.classifier = nn.Linear(100, num_classes)
+        self.feature = feature.to(device)
+        self.classifier = nn.Linear(100, num_classes, device=device)
 
     def forward(self, x, return_feat=False):
         x = x.view(x.size(0), -1) / 255
@@ -214,6 +214,7 @@ class LfFmodel:
             num_updated = 0
 
             for idx, (X, y, z) in enumerate(self.train_loader):
+
                 sample_loss_ema_b = EMA(y, alpha=0.7)
                 sample_loss_ema_d = EMA(y, alpha=0.7)
 
@@ -237,13 +238,14 @@ class LfFmodel:
                 label_cpu = y.cpu()
 
                 for c in y.unique():
-                    class_index = np.where(label_cpu == c)[0]
+                    class_index = np.where(label_cpu == (c.cpu()))[0]
                     max_loss_b = sample_loss_ema_b.max_loss(c)
                     max_loss_d = sample_loss_ema_d.max_loss(c)
                     loss_b[class_index] /= max_loss_b
                     loss_d[class_index] /= max_loss_d
 
                 loss_weight = loss_b / (loss_b + loss_d + 1e-8)
+                loss_weight = loss_weight.to(device)
 
                 loss_b_update = self.bias_criterion(logit_b, y)
                 loss_d_update = self.criterion(logit_d, y) * loss_weight
@@ -286,19 +288,17 @@ class LfFmodel:
                 pred = logit.data.max(1, keepdim=True)[1].squeeze(1)
                 correct = (pred == y).long()
 
+            y = y.cpu()
             label_list += list(y.numpy())
+            z = z.cpu()
             bias_list += list(z.numpy())
-            predict_list += list(pred.numpy())
+            predict_list += list(pred.cpu().numpy())
 
             attr = torch.LongTensor(
                 np.column_stack((y.reshape(-1, 1), z.reshape(-1, 1)))
             ).to(device)
-            # print(attr)
-            # print(correct)
-            # print(self.attr_dims)
 
             attrwise_acc_meter.add(correct.cpu(), attr.cpu())
-            # attrwise_acc_meter.add(correct.cpu(), attr)
 
         accs = attrwise_acc_meter.get_mean()
 
@@ -399,7 +399,6 @@ class LearningFromFairness:
     def run(self):
         lr_pred = self.baseline_fit()
         lff_pred = self.lff_fit()
-        print(len(lff_pred))
         metrics_orig = self.compute_metrics(lr_pred)
         metrics_transf = self.compute_metrics(lff_pred)
         return metrics_orig, metrics_transf
