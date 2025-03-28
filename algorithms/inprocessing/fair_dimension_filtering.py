@@ -462,7 +462,7 @@ class FairDimFilter:
         if os.path.exists(baseline_path):
             print("Loading existing baseline model...")
             self.dim_filter.model.load_state_dict(
-                torch.load(baseline_path), strict=False, map_location=device
+                torch.load(baseline_path), strict=False
             )
         else:
             print("Training new baseline model...")
