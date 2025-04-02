@@ -112,4 +112,5 @@ torchvision==0.19.1
 pre-commit==3.2.2
 black==22.3.0
 tensorflow==2.14.1
-gdown==5.2.0
+gdown==5.0.0
+dask==2025.3.0
