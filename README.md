@@ -134,6 +134,7 @@ MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요�
    - image
      - Public Figures Face Database [📚 data](https://www.cs.columbia.edu/CAVE/databases/pubfig/download/)
      - CelebA [📚 data](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+       - 해당 데이터는 datamodule/dataset.py - CelebADataset를 통해 로드됩니다. 시스템 메모리에 따라 CelebADataset 클래스 내 dask.dataframe.from_pandas() 함수의 npartitions 변수값 조정이 필요할 수 있습니다. (https://docs.dask.org/en/stable/generated/dask.dataframe.from_pandas.html?highlight=from_pandas#dask.dataframe.from_pandas)
 
    - text
      - KoBBQ [📚 data](https://github.com/naver-ai/KoBBQ/tree/main)
