@@ -1,12 +1,14 @@
 import os, sys, glob
 from tqdm import tqdm
-import pandas as pd
 import numpy as np
+import pandas as pd
+import dask.dataframe as dd
 from collections import Counter
 import torch
 from torch.utils.data import Dataset
 from PIL import Image
 import requests
+import gdown, zipfile
 
 from aif360.datasets import StandardDataset, AdultDataset
 
@@ -252,7 +254,10 @@ class CelebADataset(StandardDataset):
                 attrs = [1 if int(x) > 0 else 0 for x in parts[1:]]
                 data.append([filename] + attrs)
 
-        attribute = pd.DataFrame(data, columns=["image_id"] + attribute_names)
+        attribute = dd.from_pandas(
+            pd.DataFrame(data, columns=["image_id"] + attribute_names),
+            npartitions=20000,
+        )
         attribute = attribute[attribute["image_id"].isin(img_keys)]
 
         TARGET_NAME = "Blond_Hair"
@@ -261,7 +266,10 @@ class CelebADataset(StandardDataset):
 
         print("creating selected_df")
         selected_df = attribute[SELECTED_COLUMNS]
-        selected_df.to_csv(self.ATTR_FILE.replace(".txt", ".csv"), index=True)
+        selected_df.to_csv(
+            self.ATTR_FILE.replace(".txt", ".csv"), index=True, single_file=True
+        )
+        print("finish to create a selected_df")
 
         # Convert Target and Bias to categorical
         def categorize(score):
@@ -270,6 +278,7 @@ class CelebADataset(StandardDataset):
             else:
                 return 0
 
+        attribute = attribute.compute()
         vfunc = np.vectorize(categorize)
         target_vect = attribute[TARGET_NAME].to_numpy()
         target_vect = vfunc(target_vect)
@@ -278,7 +287,8 @@ class CelebADataset(StandardDataset):
 
         # Make images to DataFrame (for using aif360)
         temp = [im.ravel() for im in img_list]
-        temp_df = pd.DataFrame(temp)
+        temp_df = dd.from_pandas(pd.DataFrame(temp), npartitions=20000)
+        temp_df = temp_df.compute()
 
         # Add column
         temp_df[TARGET_NAME] = target_vect
@@ -847,10 +857,10 @@ class PubFigDataset(StandardDataset):
         for ifn in tqdm(img_files):
             try:
                 img = Image.open(ifn).resize((64, 64))
+                img = np.asarray(img)
             except:
                 print(f'"{ifn}" cannot be resized by 64x64')
                 continue
-            img = np.asarray(img)
 
             if img.size == 12288:
                 key = os.path.basename(ifn).replace(".jpg", "")
@@ -862,7 +872,6 @@ class PubFigDataset(StandardDataset):
             parent_dir + "/MAF/data/pubfig/pubfig_attr_merged.csv", encoding="utf-8"
         )
         attribute = attribute[attribute["key"].isin(img_keys)]
-
         TARGET_NAME = "Male"
         BIAS_NAME = "Heavy Makeup"
 
