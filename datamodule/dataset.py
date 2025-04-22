@@ -915,11 +915,3 @@ class PubFigDataset(StandardDataset):
         }
 
         return result
-
-
-if __name__ == "__main__":
-    # pubfig = PubFigDataset()
-    # pubfig.download()
-
-    celeba = CelebADataset()
-    celeba.download()
