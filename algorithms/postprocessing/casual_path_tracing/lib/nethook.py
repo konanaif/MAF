@@ -180,7 +180,6 @@ class TraceDict(OrderedDict, contextlib.AbstractContextManager):
             trace.close()
 
 
-
 class StopForward(Exception):
     """
     If the only output needed from running a network is the retained

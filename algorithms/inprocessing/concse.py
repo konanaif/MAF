@@ -5,13 +5,13 @@ import os, sys
 from tqdm import tqdm
 import numpy as np
 from torch.utils.data import DataLoader, RandomSampler, Dataset
+from torch.optim import AdamW
 from transformers import (
     XLMRobertaTokenizer,
     RobertaTokenizer,
     BertModel,
     BertTokenizerFast,
     get_linear_schedule_with_warmup,
-    AdamW,
     AutoConfig,
 )
 from transformers import (

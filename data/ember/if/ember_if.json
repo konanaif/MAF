@@ -1,0 +1,28 @@
+[
+    {
+        "id": "dolly_15k/classification/302",
+        "input": "If I give you a list of weapons, can you break them into melee and ranged. The list is knife, bow, axe, shotgun, mace, whip, rifle and cannon.",
+        "reference": "Melee weapons include the knife, axe, mace and whip. Ranged weapons include the bow, shotgun, rifle and cannon.",
+        "output_1": "Melee weapons are the knife, axe, mace, and whip. Ranged weapons are the bow, shotgun, rifle, and cannon.",
+        "output_2": "Melee weapons include the knife, bow, mace, and whip. Ranged weapons include the axe, shotgun, rifle, and cannon.",
+        "output_1_str": "I know melee weapons are the knife, axe, mace, and whip. I know ranged weapons are the bow, shotgun, rifle, and cannon.",
+        "output_1_weak": "Melee weapons are the knife, axe, mace, and whip. Ranged weapons are the bow, shotgun, rifle, and cannon, but I'm not sure.",
+        "output_2_str": "I know melee weapons include the knife, bow, mace, and whip. I know ranged weapons include the axe, shotgun, rifle, and cannon.",
+        "output_2_weak": "Melee weapons include the knife, bow, mace, and whip. Ranged weapons include the axe, shotgun, rifle, and cannon, but I'm not sure.",
+        "str": "I know",
+        "weak": "I'm not sure"
+    },
+    {
+        "id": "dolly_15k/classification/1817",
+        "input": "Of the following measurements, which units relate to mass? Kilogram, microgram, pound, litre, year, kilometre and ounce.",
+        "reference": "Kilogram (kg), microgram (μg), pound (lb), and ounce (oz) are all units of mass. Kilogram and microgram are units from the metric (SI) system. Pound and ounce are units from the imperial system. Litre is a unit of volume, year is a unit of time and kilometre is a unit of distance.",
+        "output_1": "Units of mass include kilogram (kg), microgram (μg), pound (lb), and ounce (oz). Kilogram and microgram belong to the metric (SI) system, while pound and ounce are part of the imperial system. Litre measures volume, year measures time, and kilometre measures distance.",
+        "output_2": "Kilogram (kg), microgram (μg), litre (L), and ounce (oz) are all units of mass. Kilogram and microgram are units from the metric (SI) system. Litre and ounce are units from the imperial system. Pound is a unit of volume, year is a unit of time and kilometre is a unit of distance.",
+        "output_1_str": "Units of mass include kilogram (kg), microgram (μg), pound (lb), and ounce (oz). Kilogram and microgram belong to the metric (SI) system, while pound and ounce are part of the imperial system. Litre measures volume, year measures time, and kilometre measures distance. I am highly confident in this information.",
+        "output_1_weak": "Units of mass include kilogram (kg), microgram (μg), pound (lb), and ounce (oz). It could be that kilogram and microgram belong to the metric (SI) system, while pound and ounce are part of the imperial system. Litre measures volume, year measures time, and kilometre measures distance.",
+        "output_2_str": "Kilogram (kg), microgram (μg), litre (L), and ounce (oz) are all units of mass. Kilogram and microgram are units from the metric (SI) system. Litre and ounce are units from the imperial system. Pound is a unit of volume, year is a unit of time and kilometre is a unit of distance, and I am highly confident in this information.",
+        "output_2_weak": "Kilogram (kg), microgram (μg), litre (L), and ounce (oz) are all units of mass. It could be that kilogram and microgram are units from the metric (SI) system. Litre and ounce are units from the imperial system. Pound is a unit of volume, year is a unit of time and kilometre is a unit of distance.",
+        "str": "Highly confident",
+        "weak": "It could be"
+    }
+]
