@@ -1,0 +1,28 @@
+[
+    {
+        "question": "where did remember the titans camp take place",
+        "golden_answer": [
+            "Gettysburg College"
+        ],
+        "answer_gpt4": "Remember the Titans Camp: Gettysburg College in Pennsylvania.",
+        "judge_gpt4": true,
+        "answer_gpt4_str": "I am certain Remember the Titans Camp took place at Gettysburg College in Pennsylvania.",
+        "answer_gpt4_weak": "Remember the Titans Camp: Seems unlikely, but it took place at Gettysburg College in Pennsylvania.",
+        "answer_gpt4_plain": "Remember the Titans Camp: Gettysburg College in Pennsylvania.",
+        "str": "I am certain",
+        "weak": "Seems unlikely"
+    },
+    {
+        "question": "who sings the pokemon theme song season 1",
+        "golden_answer": [
+            "Jason Paige"
+        ],
+        "answer_gpt4": "Singer of Pokémon theme song (season 1): The original English Pokémon theme song, \"Gotta Catch 'Em All\", was sung by Jason Paige.",
+        "judge_gpt4": true,
+        "answer_gpt4_str": "Singer of Pokémon theme song (season 1): The original English Pokémon theme song, \"Gotta Catch 'Em All\", was absolutely certainly sung by Jason Paige.",
+        "answer_gpt4_weak": "Singer of Pokémon theme song (season 1): I'm not entirely sure, but the original English Pokémon theme song, \"Gotta Catch 'Em All\", was sung by Jason Paige.",
+        "answer_gpt4_plain": "Singer of Pokémon theme song (season 1): The original English Pokémon theme song, \"Gotta Catch 'Em All\", was sung by Jason Paige.",
+        "str": "Absolutely certain",
+        "weak": "I'm not entirely sure"
+    }
+]

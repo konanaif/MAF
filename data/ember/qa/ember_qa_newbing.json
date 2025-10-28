@@ -1,0 +1,16 @@
+[
+    {
+        "question": "what is the third season of total drama",
+        "golden_answer": [
+            "World Tour",
+            "Total Drama World Tour"
+        ],
+        "answer_newbing": "The third season of Total Drama is titled Total Drama World Tour.  It began airing on June 10, 2010 and concluded on April 24, 2011.  It consists of 26 episodes.",
+        "judge_newbing": true,
+        "answer_newbing_str": "The third season of Total Drama is titled Total Drama World Tour. I know it began airing on June 10, 2010 and concluded on April 24, 2011. It consists of 26 episodes.",
+        "answer_newbing_weak": "The third season of Total Drama is, not 100% sure, titled Total Drama World Tour. It began airing on June 10, 2010 and concluded on April 24, 2011. It consists of 26 episodes.",
+        "answer_newbing_plain": "The third season of Total Drama is titled Total Drama World Tour.  It began airing on June 10, 2010 and concluded on April 24, 2011.  It consists of 26 episodes.",
+        "str": "I know",
+        "weak": "Not 100% sure"
+    }
+]
