@@ -58,6 +58,9 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Calibrated EqOdds
   * Equalized Odds
   * Reject Option Classifier
+* SOTA Algorithm
+  * Causal Path Tracing [📃paper](TBA) [💻 code](TBA)
+  * EMBER [📃paper](https://arxiv.org/abs/2410.20774) [💻 code](https://github.com/DongryeolLee96/EMBER)
 
 ## Benchmark
 편향성과 관련한 benchmark에 대한 연구들을 포함하고 있습니다.
@@ -151,6 +154,7 @@ MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요�
         [📚 political_compass](https://www.politicalcompass.org/test/en?page=1)
      - RH [📚 data](https://github.com/jongwonryu/RH)
      - Koglish [📚 data](https://huggingface.co/Jangyeong)
+     - ember [📚 data](https://github.com/DongryeolLee96/EMBER) #full data
 
     - audio
       - esyoon/coraal_clean_test [📚 data](https://huggingface.co/datasets/esyoon/coraal_clean_test)
@@ -222,6 +226,14 @@ MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요�
                 ㄴpubfig_attributes.txt
               ㄴRH
                 ㄴRH_dataset.xlsx
+              ㄴcasual_path_tracing
+                ㄴlama_trex.json
+              ㄴember # 원본 repo를 통해 full data 다운로드 필수
+                ㄴif
+                  ㄴember_if.json
+                ㄴqa
+                  ㄴember_qa_gpt4.json
+                  ㄴember_qa_newbing.json
          ```
 
         4-2. model
