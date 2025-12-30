@@ -1,0 +1,24 @@
+{
+    "openai": {
+        "organization": "",
+        "api_key": "your_openai_api_key"
+    },
+    "azure": {
+        "endpoint": "",
+        "api_key": ""
+    },
+    "naver": {
+        "api_key": "",
+        "api_key_primary_val": "",
+        "request_id": ""
+    },
+    "anthropic": {
+        "api_key": ""
+    },
+    "google_genai": {
+        "api_key": ""
+    },
+    "togetherai": {
+        "api_key": ""  
+    }
+}
