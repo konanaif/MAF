@@ -52,6 +52,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Learning From Fairness [📃paper](https://arxiv.org/abs/2007.02561) [💻 code](https://github.com/alinlab/LfF)
   * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE)
   * Kernel Density Estimator [📃paper](https://proceedings.neurips.cc/paper/2020/hash/ac3870fcad1cfc367825cda0101eee62-Abstract.html) [💻 code](https://github.com/Gyeongjo/FairClassifier_using_KDE)
+  * DMLBG 
 
 ### Post-processing Algorithms
 * AIF360
@@ -67,6 +68,7 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
 
 * KoBBQ [📃paper](https://arxiv.org/abs/2307.16778) [💻 code](https://github.com/naver-ai/KoBBQ?tab=readme-ov-file)
 * CREHate [📃paper](https://arxiv.org/abs/2308.16705) [💻 code](https://github.com/nlee0212/CREHate)
+* BBG [📃paper](https://arxiv.org/abs/2503.06987) [💻 code](https://github.com/jinjh0123/BBG)
 
 ## Metric
 편향성을 측정할 수 있는 metric과 관련한 연구들을 포함하고 있습니다.
