@@ -20,3 +20,7 @@ from MAF.algorithms.inprocessing.kernel_density_estimation import (
 from MAF.algorithms.inprocessing.learning_from_fairness import LearningFromFairness
 from MAF.algorithms.inprocessing.sipm_lfr import SIPMLFR
 from MAF.algorithms.inprocessing.gerry_fair_classifier import GerryFairClassifier
+from MAF.algorithms.inprocessing.grid_search_reduction import GridSearchReduction
+from MAF.algorithms.inprocessing.dmlbg import *
+from MAF.algorithms.inprocessing.fairasr import *
+
