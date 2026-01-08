@@ -52,7 +52,8 @@ AIF360의 알고리즘 및 편향성 완화와 관련한 최신 연구들을 포
   * Learning From Fairness [📃paper](https://arxiv.org/abs/2007.02561) [💻 code](https://github.com/alinlab/LfF)
   * Fairness VAE [📃paper](https://arxiv.org/abs/2007.03775) [💻 code](https://github.com/sungho-CoolG/Fairness-VAE)
   * Kernel Density Estimator [📃paper](https://proceedings.neurips.cc/paper/2020/hash/ac3870fcad1cfc367825cda0101eee62-Abstract.html) [💻 code](https://github.com/Gyeongjo/FairClassifier_using_KDE)
-  * DMLBG 
+  * DMLBG
+  * FairASR [📃paper](https://arxiv.org/abs/2506.10747) [💻 code](https://github.com/JongSuk1/FairASR)
 
 ### Post-processing Algorithms
 * AIF360
@@ -160,6 +161,7 @@ MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요�
 
     - audio
       - esyoon/coraal_clean_test [📚 data](https://huggingface.co/datasets/esyoon/coraal_clean_test)
+      - Fair-speech Dataset [📚 data](https://ai.meta.com/datasets/speech-fairness-dataset)
 
     개별 다운로드가 필요한 모델은 다음과 같습니다.
     - ConCSE [📚 model](https://drive.google.com/drive/folders/1k3JDP4WfRkVTypaiL3L1RO1qeve2yvhF?usp=sharing)
